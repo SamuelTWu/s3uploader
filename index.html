@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <h1>S3 Uploader Test 1.0 w/Folder</h1>
+      <h1>S3 Uploader Test 2.0 w/Folder</h1>
   
       <div v-if="!image">
         <h2>Select a video</h2>
@@ -68,7 +68,7 @@
             console.log(id_token);
          
             const response = await axios({
-              method: 'POST',
+              method: 'GET',
               headers: {'Authorization': 'Bearer ' + id_token},
               url: API_ENDPOINT
             })
