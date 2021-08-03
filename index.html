@@ -81,14 +81,14 @@
               array.push(binary.charCodeAt(i))
             }
             let blobData = new Blob([new Uint8Array(array)], {type: 'video/mp4'})
-            console.log('Uploading to: ', response.uploadURL)
-            const result = await fetch(response.uploadURL, {
+            console.log('Uploading to: ', parsed.uploadURL)
+            const result = await fetch(parsed.uploadURL, {
               method: 'PUT',
               body: blobData
             })
             console.log('Result: ', result)
             // Final URL for the user doesn't need the query string params
-            this.uploadURL = response.uploadURL.split('?')[0]
+            this.uploadURL = parsed.uploadURL.split('?')[0]
           }
         }
       })
