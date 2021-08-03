@@ -68,16 +68,16 @@
             var id_token = window.location.href.split('=')[1].split('&')[0];
             console.log(id_token);
          
-            const response = await axios({
+            let response = await axios({
               method: 'GET',
               headers: {'Authorization': 'Bearer ' + id_token},
               url: API_ENDPOINT
             })
            
-            const parsed_response = JSON.parse(response)
+            let parsed_response = JSON.parse(response)
             
             
-            
+            alert(parsed_response)
             console.log('Response: ', parsed_response)
             console.log('Uploading: ', this.image)
             let binary = atob(this.image.split(',')[1])
