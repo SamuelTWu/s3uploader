@@ -67,7 +67,7 @@
             var id_token = window.location.href.split('=')[1].split('&')[0];
             console.log(id_token);
          
-            const response = await axios({
+            let response = await axios({
               method: 'POST',
               headers: {'Authorization': 'Bearer ' + id_token},
               url: API_ENDPOINT
