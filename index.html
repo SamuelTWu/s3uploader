@@ -69,7 +69,7 @@
             console.log(id_token);
          
             let response = await axios({
-              method: 'GET',
+              method: 'POST',
               headers: {'Authorization': 'Bearer ' + id_token},
               url: API_ENDPOINT
             })
