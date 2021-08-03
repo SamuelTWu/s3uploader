@@ -72,8 +72,8 @@
               headers: {'Authorization': 'Bearer ' + id_token},
               url: API_ENDPOINT
             })
-            response = JSON.parse(response);
-            console.log('Response: ', response)
+            const parsed = JSON.parse(response);
+            console.log('Response: ', parsed)
             console.log('Uploading: ', this.image)
             let binary = atob(this.image.split(',')[1])
             let array = []
