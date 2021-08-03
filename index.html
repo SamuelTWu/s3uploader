@@ -68,13 +68,15 @@
             var id_token = window.location.href.split('=')[1].split('&')[0];
             console.log(id_token);
          
-            const JSON.parse(response = await axios({
+            const response = await axios({
               method: 'GET',
               headers: {'Authorization': 'Bearer ' + id_token},
               url: API_ENDPOINT
-            }))
+            })
            
-            console.log('Response: ', response)
+            const parsed_response = JSON.parse(response)
+            
+            console.log('Response: ', parsed_response)
             console.log('Uploading: ', this.image)
             let binary = atob(this.image.split(',')[1])
             let array = []
@@ -82,14 +84,14 @@
               array.push(binary.charCodeAt(i))
             }
             let blobData = new Blob([new Uint8Array(array)], {type: 'video/mp4'})
-            console.log('Uploading to: ', response.uploadURL)
-            const result = await fetch(response.uploadURL, {
+            console.log('Uploading to: ', parsed_response.uploadURL)
+            const result = await fetch(parsed_response.uploadURL, {
               method: 'PUT',
               body: blobData
             })
             console.log('Result: ', result)
             // Final URL for the user doesn't need the query string params
-            this.uploadURL = response.uploadURL.split('?')[0]
+            this.uploadURL = parsed_response.uploadURL.split('?')[0]
           }
         }
       })
