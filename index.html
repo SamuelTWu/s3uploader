@@ -64,7 +64,7 @@
             console.log('Upload clicked')
             // Get the presigned URL
             console.log('Applying Auth Header')
-           
+           //pulls JWT token from URL
             var id_token = window.location.href.split('=')[1].split('&')[0];
             console.log(id_token);
          
@@ -76,7 +76,9 @@
            
             const parsed_response = JSON.parse(response)
             
-            console.log('Response: ', parsed_response)
+            
+            
+            console.log('Response: ', parsed_response.Key)
             console.log('Uploading: ', this.image)
             let binary = atob(this.image.split(',')[1])
             let array = []
