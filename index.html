@@ -74,7 +74,8 @@
               url: API_ENDPOINT
             })
             
-            console.log('Response: ', response)
+            const blog = JSON.parse(response);
+            console.log('Response: ', blog)
             console.log('Uploading: ', this.image)
             let binary = atob(this.image.split(',')[1])
             let array = []
