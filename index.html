@@ -26,8 +26,9 @@
 
       /* ENTER YOUR ENDPOINT HERE */
 
-      const API_ENDPOINT = 'https://6lv6xgyryk.execute-api.us-east-2.amazonaws.com/s3Uploader_test/headersresource'
+    //  const API_ENDPOINT = 'https://6lv6xgyryk.execute-api.us-east-2.amazonaws.com/s3Uploader_test/headersresource'
 
+        const API_ENDPOINT = 'https://aerv2t8pu9.execute-api.us-east-2.amazonaws.com/uploads';
       new Vue({
         el: "#app",
         data: {
@@ -68,7 +69,7 @@
             console.log(id_token);
          
             const response = await axios({
-              method: 'POST',
+              method: 'GET',
               headers: {'Authorization': 'Bearer ' + id_token},
               url: API_ENDPOINT
             })
