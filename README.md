@@ -14,7 +14,7 @@ Cognito: This contais a list of users that have created an account with us, and 
 
 Steps to Create s3Uploader w/Folders
 1) Create *lambda test function*, *s3 bucket*, and *temp-gateway*
-        a) Follow github instructions at the [S3 presigned URLs with SAM Github](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam), auto-create *s3 bucket*, *lambda           function*, and *temp_gateway*
+        a) Follow github instructions at the [S3 presigned URLs with SAM Github](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam), auto-create *s3 bucket*, *lambda function*, and *temp_gateway*
         b) Copy lambda code from my very own [S3Uploader Github](https://github.com/SamuelTWu/s3uploader). In depth analysis of code is at bottom of tutorial
         c) Keep note of the *lambda test function*, yours will be named differently, for the purpose of this tutorial we will refer to it as *lambda test function*
         d) *temp_gateway* will be replaced with a *Rest_API* later, hence “temp”
@@ -38,7 +38,7 @@ Steps to Create s3Uploader w/Folders
           b) Under GET select ‘method request’
           c) Under authorization select ‘Cognito’
           d) You will need to allow CORS access. To do so, select ‘Actions’ and choose ‘Enable CORS’. Click ‘Enable CORS and replace existing CORS headers’
-          Extra note) Because we are using lambda proxy integration, we must also send the ‘Access-Control-Allow-Origin’ header in the lambda function. I have done this for                you, you’re welcome.
+          Extra note) Because we are using lambda proxy integration, we must also send the ‘Access-Control-Allow-Origin’ header in the lambda function. I have done this for you, you’re welcome.
 6) Link *temp_url* to *Rest API*
         a) In the *index.html*, find the ‘URL_ENDPOINT’ variable
         b) In *Rest API*, select ‘stages’ and choose your stage. 
