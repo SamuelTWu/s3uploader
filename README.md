@@ -46,6 +46,8 @@ Steps to Create s3Uploader w/Folders
         c) The ‘URL_ENDPOINT’ is = to the ‘Invoke url’ followed by /’resource_name’  
            Example: https://example.region-2.amazonaws.com/test/exampleresource  
 
+Testing the S3Uploader:
+Ugh ill do this later
 
 Commonly Asked Questions:  
 Bro what the lambda function do?  
