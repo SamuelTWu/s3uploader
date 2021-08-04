@@ -1,16 +1,17 @@
 # s3uploader
 Welcome to the s3uploader! I hope you're ready for some fun with buckets, functions and gateways! If not, too bad! 
 
-The upload pipeline is made of 4 distinct parts, namely the s3 Bucket, Lambda Function, API Gateway, and Coginto.
+The upload pipeline is made of 5 distinct parts, namely the s3 Bucket, Lambda Function, API Gateway, Coginto, and the Client.
 
 S3 Bucket: This is the database that stores our files. Not everyone can upload to this bucket, however. Instead, you must have a specific url in order to upload files.
 
 Lambda Function: Lambda functions are little scripts that run whenever a specific event occurs. In this case, whenever someone successfully accesses our API Gateway, the lambda function will generate and return a specific url that allows users to upload files to the bucket. 
 
-API Gateway: The gateway is a management tool that sits between a client and a collection of backend services. In this case, the gateway autheticates users, and acts as a sort of 'button' that activates our lambda function. Only users that have the correct id_token can 'pass' through this gateway, sort of like the gates in Lord of the Rings or something IDK i don't remember those books.
+API Gateway: The gateway is a management tool that sits between a client and a collection of backend services. In this case, the gateway autheticates users, and acts as a sort of 'button' that activates our lambda function. Only users that have the correct id_token can 'pass' through this gateway, sort of like the gates in Lord of the Rings or something IDK i don't remember those books. It's important to note that this is a REST API, and as such it has some custom feature, such as lambda proxy integration. This just means that the lambda function can access certains attributes of the Gateway requests such as headers. This becomes important once we start naming the files through the lambda function. 
 
 Cognito: This contais a list of users that have created an account with us, and gives users id tokens to access the API Gateway. 
 
+Client: The Client is what users will see when they access one's homepage. It sends HTTP requests to the API Gateway, which in turn talk to the rest of the system. In this way, we can upload videos from our local computer to the s3 bucket, with authetication. 
 
 Steps to Create s3Uploader w/Folders  
 1) Create *lambda test function*, *s3 bucket*, and *temp-gateway*  
