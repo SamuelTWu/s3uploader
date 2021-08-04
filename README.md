@@ -9,7 +9,7 @@ Lambda Function: Lambda functions are little scripts that run whenever a specifi
 
 API Gateway: The gateway is a management tool that sits between a client and a collection of backend services. In this case, the gateway autheticates users, and acts as a sort of 'button' that activates our lambda function. Only users that have the correct id_token can 'pass' through this gateway, sort of like the gates in Lord of the Rings or something IDK i don't remember those books. It's important to note that this is a REST API, and as such it has some custom feature, such as lambda proxy integration. This just means that the lambda function can access certains attributes of the Gateway requests such as headers. This becomes important once we start naming the files through the lambda function. 
 
-Cognito: This contais a list of users that have created an account with us, and gives users id tokens to access the API Gateway. 
+Cognito: This contains a list of users that have created an account and gives users id tokens to access the API Gateway. These JSON Web Tokens, or JWTs, hold information about the user that we can pass through the API Gateway to the Lambda function, kind of like a nametag.
 
 Client: The Client is what users will see when they access one's homepage. It sends HTTP requests to the API Gateway, which in turn talk to the rest of the system. In this way, we can upload videos from our local computer to the s3 bucket, with authetication. 
 
@@ -33,7 +33,7 @@ Steps to Create s3Uploader w/Folders
         e) Under ‘Actions’, choose ‘create method’, choose ‘GET’  
         f) You will be prompted with ‘Integration Type’ select Lambda Function  
         g) Underneath you will see ‘Use Lambda Proxy integration’, select checkbox  
-        h) Under lambda function, begin to type ‘lambda test function’ and you will see it pop up  
+        h) Under lambda function, begin to type *lambda test function* and you will see it pop up  
 5) Link *Cognito* to *Rest API*  
           a) his loosely follows [this video](https://www.youtube.com/watch?v=oFSU6rhFETk)  
           b) Under GET select ‘method request’  
