@@ -35,10 +35,10 @@ Steps to Create s3Uploader w/Folders
         g) Underneath you will see ‘Use Lambda Proxy integration’, select checkbox  
         h) Under lambda function, begin to type *lambda test function* and you will see it pop up  
 5) Link *Cognito* to *Rest API*  
-          a) his loosely follows [this video](https://www.youtube.com/watch?v=oFSU6rhFETk)  
-          b) Under GET select ‘method request’  
-          c) Under authorization select ‘Cognito’  
-          d) You will need to allow CORS access. To do so, select ‘Actions’ and choose ‘Enable CORS’. Click ‘Enable CORS and replace existing CORS headers’  
+          a) Under GET select ‘method request’  
+          b) Under authorization select ‘Cognito’ 
+          c) You will need to allow CORS access. To do so, select ‘Actions’ and choose ‘Enable CORS’. Click ‘Enable CORS and replace existing CORS headers’
+          d) For an in depth look at the steps, check out [this video](https://www.youtube.com/watch?v=oFSU6rhFETk) 
           Extra note) Because we are using lambda proxy integration, we must also send the ‘Access-Control-Allow-Origin’ header in the lambda function. I have done this for you, you’re welcome.  
 6) Link *temp_url* to *Rest API*  
         a) In the *index.html*, find the ‘URL_ENDPOINT’ variable  
