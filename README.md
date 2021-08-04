@@ -15,7 +15,7 @@ Client: The Client is what users will see when they access one's homepage. It se
 
 Steps to Create s3Uploader w/Folders  
 1) Create *lambda test function*, *s3 bucket*, and *temp-gateway*  
-        a) Follow github instructions at the [S3 presigned URLs with SAM Github](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam), auto-create *s3 bucket*, *lambda function*, and *temp_gateway*  
+        a) Follow Github instructions in [S3 presigned URLs with SAM Github](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam), auto-create *s3 bucket*, *lambda function*, and *temp_gateway*  
         b) Copy lambda code from my very own [S3Uploader Github](https://github.com/SamuelTWu/s3uploader). In depth analysis of code is at bottom of tutorial  
         c) Keep note of the *lambda test function*, yours will be named differently, for the purpose of this tutorial we will refer to it as *lambda test function*    
         d) *temp_gateway* will be replaced with a *Rest_API* later, hence “temp”  
