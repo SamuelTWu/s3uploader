@@ -1,4 +1,4 @@
-# S3uploader
+# S3Uploader
 Welcome to the S3uploader! I hope you're ready for some fun with buckets, functions and gateways! If not, too bad! 
 
 The upload pipeline is made of 5 distinct parts, namely the s3 Bucket, Lambda Function, API Gateway, Coginto, and the Client.
