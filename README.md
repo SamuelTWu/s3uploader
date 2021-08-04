@@ -14,10 +14,10 @@ Cognito: This contais a list of users that have created an account with us, and 
 
 Steps to Create s3Uploader w/Folders
 1) Create *lambda test function*, *s3 bucket*, and *temp-gateway*
-        1) Follow github instructions at the [S3 presigned URLs with SAM Github](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam), auto-create *s3 bucket*, *lambda function*, and *temp_gateway*
-        2) Copy lambda code from my very own [S3Uploader Github](https://github.com/SamuelTWu/s3uploader). In depth analysis of code is at bottom of tutorial
-        3) Keep note of the *lambda test function*, yours will be named differently, for the purpose of this tutorial we will refer to it as *lambda test function*
-        4) *temp_gateway* will be replaced with a *Rest_API* later, hence “temp”
+        1) Follow github instructions at the [S3 presigned URLs with SAM Github](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam), auto-create *s3 bucket*, *lambda function*, and *temp_gateway*  
+        2) Copy lambda code from my very own [S3Uploader Github](https://github.com/SamuelTWu/s3uploader). In depth analysis of code is at bottom of tutorial  
+        3) Keep note of the *lambda test function*, yours will be named differently, for the purpose of this tutorial we will refer to it as *lambda test function*  
+        4) *temp_gateway* will be replaced with a *Rest_API* later, hence “temp”  
 2) Create *Cognito*
         1) Create a cognito user pool, following this [cognito-upload integration demo](https://www.youtube.com/watch?v=o7OHogUcRmI)
         2) For callback url, we will be replacing with *temp_url* later
