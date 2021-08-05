@@ -8,7 +8,13 @@
   <body>
     <div id="app">
       <h1>S3 Uploader Test 2.0 w/Folder</h1>
-  
+      <form action = "/" method = "GET">
+        <div>
+          <label for = "name">Name</label>
+          <input id = "name" name = "name" type = "text">
+        </div>
+      </form>
+
       <div v-if="!image">
         <h2>Select a video</h2>
         <input type="file" @change="onFileChange">
@@ -28,7 +34,6 @@
 
       const API_ENDPOINT = 'https://6lv6xgyryk.execute-api.us-east-2.amazonaws.com/s3Uploader_test/headersresource'
 
-      //const API_ENDPOINT = 'https://aerv2t8pu9.execute-api.us-east-2.amazonaws.com/uploads';
       new Vue({
         el: "#app",
         data: {
@@ -61,16 +66,20 @@
             this.image = ''
           },
           uploadImage: async function (e) {
+            
             console.log('Upload clicked')
             // Get the presigned URL
             console.log('Applying Auth Header')
            //pulls JWT token from URL
             var id_token = window.location.href.split('=')[1].split('&')[0];
             console.log(id_token);
-         
+            
+            //pulls name submitted by input, used for dev
+            const name = document.getElementById('name')
+
             let response = await axios({
               method: 'GET',
-              headers: {'Authorization': 'Bearer ' + id_token},
+              headers: {'Authorization': 'Bearer ' + id_token, 'Name' : name.value},
               url: API_ENDPOINT
             })
           
